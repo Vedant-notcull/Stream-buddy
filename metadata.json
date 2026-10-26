@@ -1,0 +1,6 @@
+{
+  "name": "Streamer Buddy",
+  "description": "Coin-based creator support, live stream alerts, mini-Instagram profiles, and community platform for streamers and fans.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
