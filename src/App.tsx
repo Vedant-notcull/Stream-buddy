@@ -29,6 +29,7 @@ import { CommunityExtras } from './components/CommunityExtras.tsx';
 import { WalletView } from './components/WalletView.tsx';
 import { TransactionReceiptModal } from './components/TransactionReceiptModal.tsx';
 import { AuthModal } from './components/AuthModal.tsx';
+import { DocumentationView } from './components/DocumentationView.tsx';
 import { soundEngine } from './utils/audio.ts';
 import { Search, Radio, Filter, Flame, Heart, Sparkles, Plus, ExternalLink, ShieldCheck } from 'lucide-react';
 
@@ -296,6 +297,10 @@ export default function App() {
   // Active creator to send support to
   const activeCreatorForSupport =
     selectedCreatorData?.creator || creators.find((c) => c.id === selectedCreatorId) || creators[0] || currentUser;
+
+  if (activeTab === 'documentation') {
+    return <DocumentationView onBack={() => setActiveTab('creators')} />;
+  }
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-main)] transition-colors">

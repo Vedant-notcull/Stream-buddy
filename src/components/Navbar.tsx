@@ -1,6 +1,6 @@
 import React from 'react';
 import { User } from '../types/index.ts';
-import { Bell, Volume2, VolumeX, Moon, Sun, Shield, Sparkles, UserCheck } from 'lucide-react';
+import { Bell, Volume2, VolumeX, Moon, Sun, Shield, Sparkles, UserCheck, FileText } from 'lucide-react';
 import { soundEngine } from '../utils/audio.ts';
 
 interface NavbarProps {
@@ -112,6 +112,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               Admin
             </button>
           )}
+          <button
+            onClick={() => setActiveTab('documentation')}
+            className={`whitespace-nowrap shrink-0 transition-colors py-1 flex items-center gap-1 ${
+              activeTab === 'documentation'
+                ? 'text-[var(--accent-violet)] font-bold border-b-2 border-[var(--accent-violet)]'
+                : 'hover:text-[var(--text-main)]'
+            }`}
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span>Black Book (PDF)</span>
+          </button>
         </nav>
 
         {/* Zone 3: Primary Action & Quick Controls */}
